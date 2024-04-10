@@ -9,6 +9,7 @@ namespace MainTest
         [DataRow("username", true)]
         [DataRow("user!", false)]
         [DataRow("username123", false)]
+        [DataRow(null, false)]
         [TestMethod]
         public void TestLoginValidator(string username, bool expected)
         {
@@ -33,6 +34,7 @@ namespace MainTest
                 new object[] { "password123", false },
                 new object[] { "Password123", false },
                 new object[] { "Password123!", true },
+                new object[] { null, false }
             };
         }
 
